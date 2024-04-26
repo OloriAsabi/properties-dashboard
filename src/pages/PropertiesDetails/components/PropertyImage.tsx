@@ -105,7 +105,7 @@ const PropertyImage: React.FC = () => {
                     <ModalBody>
                         <Image src={currentImage}
                         h={'100vh'}
-                        w={'100vw'}
+                        w={'100%'}
                          alt='Property' borderRadius='md' />
                     </ModalBody>
                 </ModalContent>

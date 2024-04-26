@@ -4,7 +4,6 @@ import { FaHome } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import CustomCard from '../../../components/card/Card';
 import { RowObj } from '../../../data/data';
-import CommunityOverview from './CommunityOverview';
 
 interface PropertiesTableProps {
     property: RowObj;

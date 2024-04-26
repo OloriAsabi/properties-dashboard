@@ -1,10 +1,14 @@
-import { Box, SimpleGrid, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Grid, GridItem, useBreakpointValue } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import tableDataComplex, { RowObj } from '../../data/data';
 import PropertiesDetailsCard from './components/PropertiesDetailsCard';
 import CommunityOverview from './components/CommunityOverview';
 import PropertyImage from './components/PropertyImage';
+import PropertyRentalDetails from './components/PropertyRentalDetails';
+import PropertyLeaseCard from './components/PropertyLeaseCard';
+import PropertyPortfolioCard from './components/PropertyPortfolioCard';
+import RentSignedDocument from './components/RentSignedDocument';
 
 const PropertiesDetails = () => {
       // Determine the number of columns based on screen size
@@ -33,16 +37,32 @@ const PropertiesDetails = () => {
 
   return (
     <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
-    <SimpleGrid mb='20px' columns={numColumns} spacing={{ base: '20px', xl: '20px' }}
-    >
-      <Box display={'flex'}
-      flexDirection={'column'}
+      <Grid
+        templateColumns={`repeat(${numColumns}, 1fr)`}
+        gap={{ base: '20px', xl: '20px' }}
       >
-      <PropertiesDetailsCard property={property} />
-      <PropertyImage />
-      </Box>
-      <CommunityOverview/>
-      </SimpleGrid>
+        <GridItem>
+          <PropertiesDetailsCard property={property} />
+        </GridItem>
+        <GridItem>
+          <PropertyImage />
+        </GridItem>
+        <GridItem>
+          <CommunityOverview />
+        </GridItem>
+        <GridItem>
+          <PropertyRentalDetails property={property} />
+        </GridItem>
+        <GridItem>
+          <PropertyLeaseCard property={property} />
+        </GridItem>
+        <GridItem>
+          <PropertyPortfolioCard landlord={property} /> {/* Include PropertyPortfolioCard */}
+        </GridItem>
+        <GridItem>
+          <RentSignedDocument property={property} /> {/* Include PropertyPortfolioCard */}
+        </GridItem>
+      </Grid>
     </Box>
   );
 };
