@@ -59,10 +59,11 @@ const PropertiesDetails = () => {
         <GridItem>
           <PropertyPortfolioCard landlord={property} /> {/* Include PropertyPortfolioCard */}
         </GridItem>
-        <GridItem>
-          <RentSignedDocument property={property} /> {/* Include PropertyPortfolioCard */}
-        </GridItem>
+        {/* <GridItem>
+  
+        </GridItem> */}
       </Grid>
+      <RentSignedDocument property={property} /> 
     </Box>
   );
 };

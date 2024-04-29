@@ -33,13 +33,13 @@ const RentSignedDocument: React.FC<RentSignedDocumentProps> = ({property }) => {
       alignItems="center"
       justifyContent="space-between"
       flexDirection={'row'}
+      gap={10}
     >
-      <Flex 
-      flexDirection="row"   
-      alignItems="center"
-      justifyContent="space-between">
-        <Text fontWeight="bold">Name: {property.rentSignedDocument.name}</Text>
-        <Flex alignItems="center">
+
+             <Flex justifyContent='center' flexDirection='column'  align='start' mb='12px' flex='1'>
+             <Text fontWeight="bold">Name: {property.rentSignedDocument.name}</Text>
+             </Flex>
+<Flex justifyContent='center' flexDirection='row'  align='start' mb='12px'>    
           <Text fontSize="sm">Status:</Text>
           <Badge
             ml="1"
@@ -47,12 +47,13 @@ const RentSignedDocument: React.FC<RentSignedDocumentProps> = ({property }) => {
           >
             {property.rentSignedDocument.status}
           </Badge>
-        </Flex>
+</Flex>
+        <Flex justifyContent='space-between' flexDirection='column'  align='start' mb='12px' flex='1'>
         <Text fontSize="sm">Date Created: {property.rentSignedDocument.dateCreated}</Text>
+        </Flex>
         {/* Add more details here */}
       </Flex>
 
-    </Flex>
     </CustomCard>
     </Flex>
   );
